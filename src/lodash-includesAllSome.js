@@ -19,7 +19,9 @@
 
         /**
          * Checks whether `includer` includes every item in `includee`, optionally starting the check at
-         * `idx` in `includer`.
+         * `idx` in `includer`. Uses SameValueZero comparison, just like `_.includes` (which means, for
+         * example, that [1, 2] !== [1, 2] (they are different objects), and, therefore, that [1, [2, 3]]
+         * does not include [2, 3]).
          *
          * @alias _.includesEvery, _.containsAll, _.containsEvery
          * @param {Array|Object|string} includer The collection to investigate for inclusions.
